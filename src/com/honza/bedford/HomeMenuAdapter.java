@@ -1,6 +1,7 @@
 package com.honza.bedford;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,6 +36,7 @@ public class HomeMenuAdapter extends BaseAdapter {
         	textView = new TextView(mContext);
         	textView.setLayoutParams(new GridView.LayoutParams(85, 85));
         	textView.setPadding(8, 8, 8, 8);
+        	textView.setGravity(Gravity.CENTER);
         } else {
             textView = (TextView) convertView;
         }
