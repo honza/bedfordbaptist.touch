@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class HomeMenuAdapter extends BaseAdapter {
@@ -18,7 +21,7 @@ public class HomeMenuAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return menuLabels.length;
+		return buttons.length;
 	}
 
 	public Object getItem(int position) {
@@ -31,25 +34,52 @@ public class HomeMenuAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TextView textView;
+		LinearLayout layout;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-        	textView = new TextView(mContext);
-        	textView.setLayoutParams(new GridView.LayoutParams(85, 85));
-        	textView.setPadding(8, 8, 8, 8);
-        	textView.setGravity(Gravity.CENTER);
+        	layout = new LinearLayout(mContext);
+        	layout.setLayoutParams(new GridView.LayoutParams(85, 85));
+        	layout.setPadding(8, 8, 8, 8);
+        	layout.setGravity(Gravity.CENTER);
+        	
+        	TextView text = new TextView(mContext);
+        	text.setText(buttons[position].getText());
+        	
+        	ImageView icon = new ImageView(mContext);
+        	icon.setImageResource(buttons[position].getIcon());
+        	
+        	layout.addView(icon);
+        	layout.addView(text);
+        	
         } else {
-            textView = (TextView) convertView;
+            layout = (LinearLayout) convertView;
         }
-
-        textView.setText(menuLabels[position]);
-        return textView;
+        
+        return layout;
 	}
 	
-	private String[] menuLabels = {
-		"Events",
-		"Sermons",
-		"Directions",
-		"About"
+	public class ButtonResource {
+		private String text;
+		private int icon;
+		
+		public ButtonResource(String s, int i) {
+			text = s;
+			icon = i;
+		}
+		
+		public int getIcon(){
+			return icon;
+		}
+		
+		public String getText(){
+			return text;
+		}
+	}
+	
+	ButtonResource[] buttons = {
+		new ButtonResource("Events", R.drawable.calendar),
+		new ButtonResource("Sermons", R.drawable.mic),
+		new ButtonResource("News", R.drawable.news),
+		new ButtonResource("Directions", R.drawable.map),
 	};
 
 }
