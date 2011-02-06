@@ -18,6 +18,7 @@ public class NewsActivity extends ListActivity {
 	}
 	
 	public void updateList(){
+		setContentView(R.layout.news);
 		setListAdapter(adapter);
 	}
 	
