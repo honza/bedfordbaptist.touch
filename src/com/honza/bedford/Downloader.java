@@ -18,9 +18,15 @@ public class Downloader {
 	
 	private final String newsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/news.php";
 	private String res = "";
+	private boolean DEBUG = true;
 	
 	public List<NewsItem> getNews(){
-		String json = this.getJSON(this.newsUrl);
+		String json;
+		if (DEBUG){
+			json = "[{\"post_author\": \"Honza\", \"post_title\": \"Some cool post title yo\", \"post_date\": \"2011-01-23\"}]";
+		} else {
+			json = this.getJSON(this.newsUrl);
+		}
 		Object obj = JSONValue.parse(json);
 		JSONArray array = (JSONArray) obj;
 		int size = array.size();
