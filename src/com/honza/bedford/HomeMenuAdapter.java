@@ -76,7 +76,7 @@ public class HomeMenuAdapter extends BaseAdapter {
 		}
 	}
 	
-	ButtonResource[] buttons = {
+	public ButtonResource[] buttons = {
 		new ButtonResource("Events", R.drawable.calendar),
 		new ButtonResource("Sermons", R.drawable.mic),
 		new ButtonResource("News", R.drawable.news),

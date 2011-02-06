@@ -1,12 +1,12 @@
 package com.honza.bedford;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
 
 public class Main extends Activity {
     /** Called when the activity is first created. */
@@ -20,7 +20,13 @@ public class Main extends Activity {
         
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Toast.makeText(Main.this, "" + position, Toast.LENGTH_SHORT).show();
+            	Intent i = new Intent();
+                switch(position){
+                	case 2:
+                		i.setClassName("com.honza.bedford", "com.honza.bedford.NewsActivity");
+                		break;
+                }
+                startActivity(i);
             }
 
 			
