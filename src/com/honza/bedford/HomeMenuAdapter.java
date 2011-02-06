@@ -40,9 +40,11 @@ public class HomeMenuAdapter extends BaseAdapter {
         	layout.setLayoutParams(new GridView.LayoutParams(85, 85));
         	layout.setPadding(8, 8, 8, 8);
         	layout.setGravity(Gravity.CENTER);
+        	layout.setOrientation(LinearLayout.VERTICAL);
         	
         	TextView text = new TextView(mContext);
         	text.setText(buttons[position].getText());
+        	text.setGravity(Gravity.CENTER);
         	
         	ImageView icon = new ImageView(mContext);
         	icon.setImageResource(buttons[position].getIcon());
