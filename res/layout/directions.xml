@@ -8,9 +8,21 @@
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text="Directions"
-    android:textColor="#000000" android:textSize="20dp" android:gravity="center"/>
+    android:textColor="#000000" android:textSize="20dp" android:gravity="center" android:paddingBottom="10dp"/>
 
 
 <EditText android:layout_height="wrap_content" android:id="@+id/directions_field" android:text="Your address..." android:layout_width="fill_parent"></EditText>
-<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/directions_button" android:text="Look up"></Button>
+
+
+
+
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/directions_button" android:text="Look up" android:layout_toLeftOf="@+id/gps_button"></Button>
+
+
+
+
+<Button android:id="@+id/gps_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:text="Use GPS"></Button>
+</RelativeLayout>
 </LinearLayout>
