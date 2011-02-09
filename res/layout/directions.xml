@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff" android:paddingLeft="5dp" android:paddingRight="5dp" android:paddingTop="15dp">
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Directions"
+    android:textColor="#000000" android:textSize="20dp" android:gravity="center"/>
+
+
+<EditText android:layout_height="wrap_content" android:id="@+id/directions_field" android:text="Your address..." android:layout_width="fill_parent"></EditText>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/directions_button" android:text="Look up"></Button>
+</LinearLayout>

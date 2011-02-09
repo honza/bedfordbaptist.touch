@@ -13,6 +13,7 @@
         </activity>
 
     <activity android:name="NewsActivity"></activity>
+<activity android:name="DirectionsActivity"></activity>
 </application>
 
 

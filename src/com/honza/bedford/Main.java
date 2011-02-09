@@ -25,6 +25,9 @@ public class Main extends Activity {
                 	case 2:
                 		i.setClassName("com.honza.bedford", "com.honza.bedford.NewsActivity");
                 		break;
+                	case 3:
+                		i.setClassName("com.honza.bedford", "com.honza.bedford.DirectionsActivity");
+                		break;
                 }
                 startActivity(i);
             }
