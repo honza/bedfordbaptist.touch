@@ -2,24 +2,27 @@ package com.honza.bedford;
 
 import java.util.List;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ListView;
 
-public class NewsActivity extends ListActivity {
+public class NewsActivity extends Activity {
 	
 	private static NewsListAdapter adapter;
+	private ListView lv;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.white_screen);
+        setContentView(R.layout.news);
+        lv = (ListView) findViewById(R.id.news_list);
         new DownloadNewsTask().execute();
 	}
 	
 	public void updateList(){
-		setContentView(R.layout.news);
-		setListAdapter(adapter);
+		lv.setAdapter(adapter);
 	}
 	
 	private class DownloadNewsTask extends AsyncTask<Void, Void, List<NewsItem>>{
