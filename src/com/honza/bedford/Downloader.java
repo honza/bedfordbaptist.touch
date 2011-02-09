@@ -18,26 +18,30 @@ public class Downloader {
 	
 	private final String newsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/news.php";
 	private String res = "";
-	private boolean DEBUG = true;
+	private boolean DEBUG = false;
 	
 	public List<NewsItem> getNews(){
 		String json;
 		if (DEBUG){
-			json = "[{\"post_author\": \"Honza\", \"post_title\": \"Some cool post title yo\", \"post_date\": \"2011-01-23\"}]";
+			json = "[{\"author\": \"Honza\", \"title\": \"Some cool post title yo\", \"date\": \"2011-01-23\", \"url\": \"url\"}]";
 		} else {
 			json = this.getJSON(this.newsUrl);
 		}
 		Object obj = JSONValue.parse(json);
 		JSONArray array = (JSONArray) obj;
+		if (array == null){
+			Log.v("Bedford", "array is null");
+		}
 		int size = array.size();
 		List<NewsItem> list = new ArrayList<NewsItem>();
 		
 		for (int i=0; i < size; i++){
 			JSONObject x = (JSONObject) array.get(i);
-			String author = x.get("post_author").toString();
-			String title = x.get("post_title").toString();
-			String post_date = x.get("post_date").toString();
-			NewsItem item = new NewsItem(author, title, post_date);
+			String author = x.get("author").toString();
+			String title = x.get("title").toString();
+			String post_date = x.get("date").toString();
+			String url = x.get("url").toString();
+			NewsItem item = new NewsItem(author, title, post_date, url);
 			list.add(item);
 		}
 		

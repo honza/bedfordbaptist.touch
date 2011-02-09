@@ -4,12 +4,14 @@ public class NewsItem {
 	
 	private String author;
 	private String title;
-	private String post_date;
+	private String date;
+	private String url;
 	
-	public NewsItem(String author, String title, String post_date){
+	public NewsItem(String author, String title, String date, String url){
 		this.author = author;
 		this.title = title;
-		this.post_date = post_date;
+		this.date = date;
+		this.url = url;
 	}
 
 	public String getAuthor() {
@@ -28,11 +30,19 @@ public class NewsItem {
 		this.title = title;
 	}
 
-	public String getPost_date() {
-		return post_date;
+	public String getDate() {
+		return date;
 	}
 
-	public void setPost_date(String post_date) {
-		this.post_date = post_date;
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getUrl() {
+		return url;
 	}
 }

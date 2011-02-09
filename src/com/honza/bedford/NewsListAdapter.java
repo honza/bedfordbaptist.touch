@@ -38,7 +38,7 @@ public class NewsListAdapter extends ArrayAdapter<NewsItem> {
                      if (tt != null) {
                            tt.setText(item.getTitle());                            }
                      if(bt != null){
-                           bt.setText(item.getAuthor());
+                           bt.setText("Posted by " + item.getAuthor());
                      }
              }
              return v;
