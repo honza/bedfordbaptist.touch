@@ -22,6 +22,9 @@ public class Main extends Activity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             	Intent i = new Intent();
                 switch(position){
+                	case 0:
+                		i.setClassName("com.honza.bedford", "com.honza.bedford.EventsActivity");
+                		break;
                 	case 2:
                 		i.setClassName("com.honza.bedford", "com.honza.bedford.NewsActivity");
                 		break;

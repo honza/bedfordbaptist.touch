@@ -9,17 +9,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class NewsListAdapter extends ArrayAdapter<NewsItem> {
+public class EventsListAdapter extends ArrayAdapter<EventItem> {
 
-	private List<NewsItem> items;
+	private List<EventItem> items;
 	private Context context;
 
-	public NewsListAdapter(Context context, int textViewResourceId,
-			List<NewsItem> objects) {
+	public EventsListAdapter(Context context, int textViewResourceId, List<EventItem> objects) {
 		super(context, textViewResourceId, objects);
 		this.items = objects;
 		this.context = context;
-
 	}
 
 	@Override
@@ -31,15 +29,15 @@ public class NewsListAdapter extends ArrayAdapter<NewsItem> {
 			v = vi.inflate(R.layout.news_item_row, null);
 		}
 
-		NewsItem item = items.get(position);
+		EventItem item = items.get(position);
 		if (item != null) {
 			TextView tt = (TextView) v.findViewById(R.id.toptext);
 			TextView bt = (TextView) v.findViewById(R.id.bottomtext);
 			if (tt != null) {
-				tt.setText(item.getTitle());
+				tt.setText(item.getText());
 			}
 			if (bt != null) {
-				bt.setText("Posted by " + item.getAuthor());
+				bt.setText(item.getDate() + " " + item.getTime());
 			}
 		}
 		return v;

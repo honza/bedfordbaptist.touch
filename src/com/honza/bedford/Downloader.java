@@ -17,6 +17,7 @@ import android.util.Log;
 public class Downloader {
 	
 	private final String newsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/news.php";
+	private final String eventsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/calendar.php";
 	private String res = "";
 	private boolean DEBUG = false;
 	
@@ -45,6 +46,27 @@ public class Downloader {
 			list.add(item);
 		}
 		
+		return list;
+	}
+	
+	public List<EventItem> getEvents(){
+		String json;
+		json = this.getJSON(this.eventsUrl);
+		Log.v("bedford", json);
+		Object obj = JSONValue.parse(json);
+		JSONArray array = (JSONArray) obj;
+		
+		int size = array.size();
+		List<EventItem> list = new ArrayList<EventItem>();
+		
+		for (int i=0; i < size; i++){
+			JSONObject x = (JSONObject) array.get(i);
+			String text = x.get("text").toString();
+			String date = x.get("date").toString();
+			String time = x.get("time").toString();
+			EventItem item = new EventItem(text, date, time);
+			list.add(item);
+		}
 		return list;
 	}
 	
