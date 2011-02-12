@@ -16,6 +16,7 @@
 <activity android:name="DirectionsActivity"></activity>
 <activity android:name="EventsActivity"></activity>
 <activity android:name="SermonsActivity"></activity>
+<activity android:name="SermonListenActivity"></activity>
 </application>
 
 

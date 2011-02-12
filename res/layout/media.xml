@@ -1,0 +1,20 @@
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:background="#ffffff" android:gravity="center">
+
+
+
+
+
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="center">
+	
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Play" android:id="@+id/play_btn" android:layout_below="@+id/sermon_listen_text"></Button>
+
+<Button android:text="Pause" android:id="@+id/pause_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/play_btn" android:layout_below="@+id/sermon_listen_text"></Button>
+
+
+	<TextView android:layout_width="wrap_content" android:text="@+id/TextView01" android:layout_height="wrap_content" android:id="@+id/sermon_listen_text" android:gravity="center"></TextView>
+	
+
+</RelativeLayout>
+
+
+</LinearLayout>
