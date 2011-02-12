@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:background="#ffffff" android:paddingLeft="5dp" android:paddingRight="5dp" android:paddingTop="15dp">
+   
+   <TextView
+    android:id="@+id/news_header"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:text="Latest sermons"
+    android:gravity="center"
+    android:textSize="20dp"
+    android:paddingBottom="10dp"/>
+   
+   
+<ListView
+    android:id="@+id/news_list"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:dividerHeight="1px" android:divider="#ececec"/>
+
+</LinearLayout>

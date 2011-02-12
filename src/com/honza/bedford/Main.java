@@ -25,6 +25,9 @@ public class Main extends Activity {
                 	case 0:
                 		i.setClassName("com.honza.bedford", "com.honza.bedford.EventsActivity");
                 		break;
+                	case 1:
+                		i.setClassName("com.honza.bedford", "com.honza.bedford.SermonsActivity");
+                		break;
                 	case 2:
                 		i.setClassName("com.honza.bedford", "com.honza.bedford.NewsActivity");
                 		break;

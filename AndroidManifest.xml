@@ -15,6 +15,7 @@
     <activity android:name="NewsActivity"></activity>
 <activity android:name="DirectionsActivity"></activity>
 <activity android:name="EventsActivity"></activity>
+<activity android:name="SermonsActivity"></activity>
 </application>
 
 

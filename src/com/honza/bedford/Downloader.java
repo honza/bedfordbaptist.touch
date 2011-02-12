@@ -18,6 +18,7 @@ public class Downloader {
 	
 	private final String newsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/news.php";
 	private final String eventsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/calendar.php";
+	private final String sermonsUrl = "http://www.bedfordbaptist.ca/wp-content/plugins/android/sermons.php";
 	private String res = "";
 	private boolean DEBUG = false;
 	
@@ -65,6 +66,28 @@ public class Downloader {
 			String date = x.get("date").toString();
 			String time = x.get("time").toString();
 			EventItem item = new EventItem(text, date, time);
+			list.add(item);
+		}
+		return list;
+	}
+	
+	public List<SermonItem> getSermons(){
+		String json;
+		json = this.getJSON(this.sermonsUrl);
+		Log.v("bedford", json);
+		Object obj = JSONValue.parse(json);
+		JSONArray array = (JSONArray) obj;
+		
+		int size = array.size();
+		List<SermonItem> list = new ArrayList<SermonItem>();
+		
+		for (int i=0; i < size; i++){
+			JSONObject x = (JSONObject) array.get(i);
+			String title = x.get("title").toString();
+			String date = x.get("datetime").toString();
+			String name = x.get("name").toString();
+			String preacher = x.get("preacher").toString();
+			SermonItem item = new SermonItem(title, date, name, preacher);
 			list.add(item);
 		}
 		return list;
